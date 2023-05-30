@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -29,16 +29,28 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2 center_column">
             <h1>training page</h1>
-          <form>
+          <form method="post" action='{{url_for('train')}}' enctype="multipart/form-data">
             <div class='image_label'>
-                <input placeholder='put pickure label'/>
+                <input placeholder='put pickure label'type='text' class='form-control' required  name='label'/>
             </div>
 
-            
             <label for="imageUpload">Select an image only upload jpg:</label>
-            <input type="file" id="imageUpload" name="imageUpload" accept='.jpg'>
-            <input type="submit" value="Upload">
+            <input type="file" id="imageUpload" name="image" accept='.jpg' required name='image'/>
+            <input type="submit" value="Upload" />
           </form>
+      
+          <table class='table'>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">사진 라벨</th>
+                <th scope="col">사진 경로</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{trs| safe}}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
