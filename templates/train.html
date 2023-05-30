@@ -15,13 +15,14 @@
   </head>
   <body>
     <div class="container">
-      <form action='/train'>
-        <input type='submit' class='button', value='go to train'/>
-      </form>
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
-          <h3 class="mt-5">{{time}}</h3>
-          <img src="{{ url_for('video_feed') }}" width="100%" />
+          <form>
+            <input placeholder='put pickure label'/>
+            <label for="imageUpload">Select an image only upload jpg:</label>
+            <input type="file" id="imageUpload" name="imageUpload" accept='.jpg'>
+            <input type="submit" value="Upload">
+          </form>
         </div>
       </div>
     </div>

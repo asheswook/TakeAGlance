@@ -23,6 +23,13 @@ def index():
     return render_template('index.html', **templateData)
 
 
+@app.route('/train')
+def train():
+    """image training page"""
+    
+    return render_template('train.html')
+
+
 def gen_frames():
     camera = cv2.VideoCapture(0)
     width = camera.get(cv2.CAP_PROP_FRAME_WIDTH)
