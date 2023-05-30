@@ -11,14 +11,30 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <title>{{title}}</title>
+    <style>
+        .center_column {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            margin: 5vh;
+        }
+    </style>
+    <title>training page</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 offset-lg-2">
+        <div class="col-lg-8 offset-lg-2 center_column">
+            <h1>training page</h1>
           <form>
-            <input placeholder='put pickure label'/>
+            <div class='image_label'>
+                <input placeholder='put pickure label'/>
+            </div>
+
+            
             <label for="imageUpload">Select an image only upload jpg:</label>
             <input type="file" id="imageUpload" name="imageUpload" accept='.jpg'>
             <input type="submit" value="Upload">
