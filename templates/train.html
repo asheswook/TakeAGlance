@@ -22,23 +22,27 @@
             margin: 5vh;
         }
     </style>
-    <title>training page</title>
+    <title>Training page</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2 center_column">
-            <h1>training page</h1>
+            <h1>Training page</h1>
+            <div class="offset-lg-10">
+              <button type="button" class="btn btn-primary" onclick="location.replace('/');">Camera page</button>
+            </div>
+            <br />
           <form method="post" action='{{url_for('train')}}' enctype="multipart/form-data">
             <div class='image_label'>
-                <input placeholder='put pickure label'type='text' class='form-control' required  name='label'/>
+                <input placeholder='학습 대상 Label (이름) 입력'type='text' class='form-control' required  name='label'/>
             </div>
 
-            <label for="imageUpload">Select an image only upload jpg:</label>
+            <label for="imageUpload">학습할 JPG 파일 업로드:</label>
             <input type="file" id="imageUpload" name="image" accept='.jpg' required name='image'/>
-            <input type="submit" value="Upload" />
+            <input type="submit" value="제출" />
           </form>
-      
+          <br>
           <table class='table'>
             <thead>
               <tr>
