@@ -11,6 +11,7 @@ app = Flask(__name__)
 vs = VisageSnap.Core()
 vs.load_model()
 vs.set_label(["biden", "obama", "jaewook", "haehyeon"])
+vs.threshold = 0.42
 
 UPLOAD_FOLDER = 'image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
