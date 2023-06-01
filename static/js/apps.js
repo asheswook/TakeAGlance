@@ -12,3 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
     statusMessage.style.display = "block";
   });
 });
+
+function stopVideoStreaming() {
+  var video = document.getElementById('video-stream'); // video 태그의 id를 적절히 수정해야 합니다.
+  video.src = ''; // 비디오 소스를 비워서 스트리밍 중지
+}
+
+// 페이지 이동 시 비디오 스트리밍 중지
+window.onbeforeunload = function() {
+  stopVideoStreaming();
+};
