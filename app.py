@@ -17,6 +17,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/recog')
+def recog():
     """Video streaming home page."""
     now = datetime.datetime.now()
     timeString = now.strftime("%Y-%m-%d %H:%M")
@@ -24,7 +28,7 @@ def index():
         'title': 'Image Streaming',
         'time': timeString
     }
-    return render_template('index.html', **templateData)
+    return render_template('recog.html', **templateData)
 
 @app.route('/video_feed')
 def video_feed(): 

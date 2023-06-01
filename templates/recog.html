@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <script src="https://kit.fontawesome.com/18c7fa29b4.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    
+    <style>
+      .rotate-icon {
+        /* 회전 애니메이션을 적용할 클래스 선택자 */
+        animation: rotate 1.5s linear infinite;
+      }
+
+      @keyframes rotate {
+        /* 회전 애니메이션 정의 */
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+    </style>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action='/train'>
+        <input type='submit' class='button', value='go to train'/>
+      </form>
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h3 class="mt-5">{{time}}</h3>
+          <div class='message-box'>
+            <div id='loading-message'>비디오 스트리밍 로딩 중...
+              <span>
+                <i class="fa-solid fa-spinner rotate-icon"></i>
+              </span>
+            </div>
+            <div id='status-message' style='display: none'>카메라 동작 중!
+              <span>
+                <i class="fa-solid fa-camera rotate-icon"></i>
+              </span>
+
+            </div>
+          </div>
+          
+          <img id="video-stream" src="{{ url_for('video_feed') }}" width="100%" />
+        </div>
+      </div>
+    </div>
+    
+    <script src="{{url_for('static', filename='js/apps.js')}}"></script>
+  </body>
+</html>
