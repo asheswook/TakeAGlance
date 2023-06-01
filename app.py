@@ -16,8 +16,12 @@ vs.threshold = 0.42
 UPLOAD_FOLDER = 'image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/')
+@app.route('/introduce')
 def index():
+    return render_template('introduce.html')
+
+@app.route('/')
+def recog():
     """Video streaming home page."""
     now = datetime.datetime.now()
     timeString = now.strftime("%Y-%m-%d %H:%M")
