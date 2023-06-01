@@ -28,7 +28,6 @@ def gen_frames():
             rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
         except:
             print("Error: ", sys.exc_info()[0])
-            print("Try again...")
             camera = cv2.VideoCapture(0)
             continue
 
