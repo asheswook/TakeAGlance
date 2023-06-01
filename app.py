@@ -15,11 +15,11 @@ vs.set_label(["biden", "obama", "jaewook", "haehyeon"])
 UPLOAD_FOLDER = 'image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/')
+@app.route('/introduce')
 def index():
-    return render_template('index.html')
+    return render_template('introduce.html')
 
-@app.route('/recog')
+@app.route('/')
 def recog():
     """Video streaming home page."""
     now = datetime.datetime.now()
@@ -28,7 +28,7 @@ def recog():
         'title': 'Image Streaming',
         'time': timeString
     }
-    return render_template('recog.html', **templateData)
+    return render_template('index.html', **templateData)
 
 @app.route('/video_feed')
 def video_feed(): 
