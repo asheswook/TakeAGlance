@@ -20,11 +20,16 @@ def gen_frames():
     lastTime = time.time()*1000.0
     
     while True:
-        ret, frame = camera.read()
+        try:
+            ret, frame = camera.read()
 
-        # 1/4 size
-        small_frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
-        rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
+            # 1/4 size
+            small_frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
+            rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
+        except:
+            print("Error: ", sys.exc_info()[0])
+            camera = cv2.VideoCapture(0)
+            continue
 
         face_locations = face_recognition.face_locations(rgb_small_frame)
         face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
