@@ -1,16 +1,14 @@
 from flask import Flask, render_template, Response,request, url_for
-import os
 import datetime
 from frame import *
 import VisageSnap
-import csv
 from add_csv import save_data_to_csv, csv_data_visualization, vs_in_csv_confirm, csv_to_dict
 
 
 app = Flask(__name__)
 vs = VisageSnap.Core()
 vs.load_model()
-vs.set_label(["biden", "obama", "jaewook", "haehyeon"])
+vs.set_label(["jaewook", "haehyeon", "taeyoung", "jihun"])
 vs.threshold = 0.42
 
 UPLOAD_FOLDER = 'image'

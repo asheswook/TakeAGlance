@@ -1,10 +1,7 @@
 import cv2
-import numpy as np
 import time
-import datetime
 import sys
 import face_recognition
-import os
 from app import *
 from VisageSnap import To
 
