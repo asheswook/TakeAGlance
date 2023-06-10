@@ -11,6 +11,12 @@ def register():
     id = input("아이디 : ")
     password = input("비밀번호 : ")
 
+    # id 중복 확인
+    for user in users:
+        if user["id"] == id:
+            print("이미 존재하는 아이디입니다.")
+            return
+
     user = {"id": id, "password": password}
     users.append(user)
 
@@ -19,6 +25,7 @@ def register():
 def login():
     id = input("아이디 : ")
     password = input("비밀번호 : ")
+    
 
     for user in users:
         if user["id"] == id and user["password"] == password:
