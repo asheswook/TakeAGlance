@@ -37,6 +37,9 @@
           transform: rotate(360deg);
         }
       }
+      #frame {
+        text-align: center;
+      }
     </style>
     <title>Camera page</title>
   </head>
@@ -65,7 +68,7 @@
             </div>
             <br />
           </div>
-          <img id="video-stream" src="{{ url_for('video_feed') }}" width="100%" />
+          <div id="frame"></div>
         </div>
       </div>
     </div>

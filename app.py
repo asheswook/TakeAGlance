@@ -9,6 +9,7 @@ app = Flask(__name__)
 vs = VisageSnap.Core()
 vs.load_model()
 vs.set_label(["jaewook", "haehyeon", "taeyoung", "jihun"])
+# vs.train_labeled_data()
 vs.threshold = 0.42
 
 UPLOAD_FOLDER = 'image'
