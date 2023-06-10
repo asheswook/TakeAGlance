@@ -40,13 +40,18 @@ def video_feed():
 @app.route('/train', methods=['GET', 'POST'])
 def train():
     # csv 파일 데이터 확인
-    csv_data=csv_to_dict() # csv 데이터를 dict으로 가져오기.
-    for get_face in vs.get_faces(): # vs로 학습한 데이터가 csv데이터에 있는지 확인 이후 추가 유무 확인.
-        vs_row=[get_face.label, get_face.filenames[0]]
-        vs_in_csv_confirm(vs_row, csv_data=csv_data)
+    if request.method=='GET':
+        csv_data=csv_to_dict() # csv 데이터를 dict으로 가져오기.
+        if len(csv_data)==0:
+            csv_data={}
+        print(csv_data, 'ddddddddddddddddddd') # 이게 왜 작동을 안 하지...?
+        for get_face in vs.get_faces(): # vs로 학습한 데이터가 csv데이터에 있는지 확인 이후 추가 유무 확인.
+            vs_row=[get_face.label, get_face.filenames[0]]
+            vs_in_csv_confirm(vs_row, csv_data=csv_data)
+            csv_data=csv_to_dict()
+            
+        trs=csv_data_visualization() # html 파일 table에 값 형성.
         
-    trs=csv_data_visualization() # html 파일 table에 값 형성.
-    
     if request.method=='POST':
         
         img_label=request.form['label']
