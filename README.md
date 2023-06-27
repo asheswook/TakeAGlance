@@ -31,7 +31,7 @@
 - 학습된 인물의 이름, 사진의 경로가 나타납니다.
 
 <img src="https://github.com/asheswook/TakeAGlance/blob/main/docs/impl.gif?raw=true" width=827>
-<img width="827" alt="image" src="https://github.com/asheswook/TakeAGlance/assets/25760310/5c7f0572-442e-486a-a7b5-744749cac28f">
+<img width="827" alt="image" src="https://github.com/asheswook/TakeAGlance/blob/main/docs/impl2.png?raw=true">
 
 ## P.S.
 *이 프로젝트는 숭실대학교 2023년 1학년 교양 필수 '컴퓨팅적사고와활용' 과목의 최종 프로젝트로 제출되었습니다.*
