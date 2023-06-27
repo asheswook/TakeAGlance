@@ -1,4 +1,4 @@
-# Take A Glance
+# 머신러닝 얼굴 인식을 활용한 도서관 출입 간편화
 
 ## Introduce
 
